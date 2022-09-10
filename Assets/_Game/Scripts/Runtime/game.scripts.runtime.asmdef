@@ -1,0 +1,16 @@
+{
+    "name": "game.scripts.runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:864952e279ecafc4f8ff78d6329af4b5"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
