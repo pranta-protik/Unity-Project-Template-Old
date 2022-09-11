@@ -21,6 +21,9 @@ namespace _Tools.Utils
 
         [MenuItem("Tools/Scene Tools/Scene Presets/Create Joystick Controller Scene")]
         public static void CreateJoystickControllerScene() => SceneHelpers.CreateJoystickControllerScene();
+        
+        [MenuItem("Tools/Scene Tools/Scene Presets/Create Runner Controller Scene")]
+        public static void CreateRunnerControllerScene() => SceneHelpers.CreateRunnerControllerScene();
 
         #endregion
     }

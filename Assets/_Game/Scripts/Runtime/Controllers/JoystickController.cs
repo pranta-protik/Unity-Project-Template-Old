@@ -104,14 +104,15 @@ namespace _Game.Controllers
 
             if (Input.GetMouseButtonUp(0)) _canMove = false;
         }
-
+        
 #if UNITY_EDITOR
         [Sirenix.OdinInspector.Button, Sirenix.OdinInspector.PropertySpace]
-        public void EnableControl() => _canControl = true;
-
-        [Sirenix.OdinInspector.Button]
-        public void DisableControl() => _canControl = false;
 #endif
+        public void EnableControl() => _canControl = true;
+#if UNITY_EDITOR
+        [Sirenix.OdinInspector.Button]
+#endif
+        public void DisableControl() => _canControl = false;
 
         #endregion
     }

@@ -2,7 +2,8 @@
     "name": "game.scripts.runtime",
     "rootNamespace": "",
     "references": [
-        "GUID:864952e279ecafc4f8ff78d6329af4b5"
+        "GUID:864952e279ecafc4f8ff78d6329af4b5",
+        "GUID:626070ea3273cb844a310aa4f53b31fa"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

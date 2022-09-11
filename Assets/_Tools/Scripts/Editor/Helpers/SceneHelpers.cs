@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using _Game.Controllers;
 using _Game.Managers;
 using _Tools.Managers;
 using _Tools.Utils;
@@ -113,6 +114,27 @@ namespace _Tools.Helpers
             InstantiateAsPrefab(platformPrefab, "Platform");
         }
 
+        public static void CreateRunnerControllerScene()
+        {
+            CommonSceneSetup();
+            
+            var pathPrefab = AssetDatabase.LoadAssetAtPath("Assets/_Game/Prefabs/Env/Path.prefab", typeof(GameObject)) as GameObject;
+            InstantiateAsPrefab(pathPrefab, "Path");
+            
+            var playerCamPrefab =
+                AssetDatabase.LoadAssetAtPath("Assets/_Game/Prefabs/Camera/Runner/PlayerCam.prefab", typeof(GameObject)) as GameObject;
+
+            var playerCamGO = InstantiateAsPrefab(playerCamPrefab, "PlayerCam");
+            
+            var playerPrefab = AssetDatabase.LoadAssetAtPath("Assets/_Game/Prefabs/Characters/Runner/Player.prefab", typeof(GameObject)) as GameObject;
+
+            var playerGO = InstantiateAsGameObject(playerPrefab, "Player");
+
+            playerCamGO.GetComponent<CinemachineVirtualCamera>().m_Follow = playerGO.transform.GetChild(0);
+            
+            playerGO.GetComponent<PathFollower>().FindPathFromScene();
+        }
+        
         private static void CommonSceneSetup()
         {
             var directionalLightPrefab =
