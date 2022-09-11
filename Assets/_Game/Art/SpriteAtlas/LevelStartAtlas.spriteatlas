@@ -6,7 +6,7 @@ SpriteAtlas:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SplashUI
+  m_Name: LevelStartAtlas
   m_EditorData:
     serializedVersion: 2
     textureSettings:
@@ -23,7 +23,7 @@ SpriteAtlas:
     platformSettings:
     - serializedVersion: 3
       m_BuildTarget: Android
-      m_MaxTextureSize: 1024
+      m_MaxTextureSize: 512
       m_ResizeAlgorithm: 0
       m_TextureFormat: 50
       m_TextureCompression: 1
@@ -44,25 +44,17 @@ SpriteAtlas:
     secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
-    - {fileID: 102900000, guid: 9a7d0c1d91e036043914d41c2f7fa651, type: 3}
+    - {fileID: 102900000, guid: 0b3f307dc9c410842a36cd91d0d2f869, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 21300000, guid: 4f0fcdc3dbfe23948bee6140fa6eb0e3, type: 3}
-  - {fileID: 21300000, guid: 1e86a0750f00af54f9490f20c9d89455, type: 3}
-  - {fileID: 21300000, guid: 47bde8f7b29f4f74e9dd85e3c89f2ff0, type: 3}
-  - {fileID: 21300000, guid: af0ec11908441f84c86dfe9e0cc8eb22, type: 3}
-  - {fileID: 21300000, guid: 2f74ab0a5ed2cbb40b1da9adb5bde016, type: 3}
-  - {fileID: 21300000, guid: f87539df5a16e554fb4e766d8ca8f78a, type: 3}
+  - {fileID: 21300000, guid: 8dda7a13cea56ad438c08423cb6d9129, type: 3}
+  - {fileID: 21300000, guid: 7e8c70972abae3444b3bf0c1ad1f32dc, type: 3}
   m_PackedSpriteNamesToIndex:
-  - Glow
-  - Minions
-  - Rays
-  - Square
-  - ProgressBarInnerPart
-  - ProgressBarOutline
+  - HintHand
+  - DoubleSidedArrow
   m_RenderDataMap: {}
-  m_Tag: SplashUI
+  m_Tag: LevelStartAtlas
   m_IsVariant: 0

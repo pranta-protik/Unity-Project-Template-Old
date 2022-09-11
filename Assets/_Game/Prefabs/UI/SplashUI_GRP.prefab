@@ -103,7 +103,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 119
 --- !u!1 &5646380534121301931
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,6 +1103,7 @@ GameObject:
   - component: {fileID: 5646380535865454599}
   - component: {fileID: 5646380535865454596}
   - component: {fileID: 5646380535865454597}
+  - component: {fileID: 4803096932727015076}
   m_Layer: 5
   m_Name: Rays
   m_TagString: Untagged
@@ -1184,6 +1185,20 @@ MonoBehaviour:
   _spriteName: Rays
   _image: {fileID: 5646380535865454596}
   _spriteRenderer: {fileID: 0}
+--- !u!114 &4803096932727015076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5646380535865454603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72415dbda4d7b24a905a0fdec62736c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rotationAxis: {x: 0, y: 0, z: -1}
+  _rotationSpeed: 50
 --- !u!1 &5646380535944865884
 GameObject:
   m_ObjectHideFlags: 0

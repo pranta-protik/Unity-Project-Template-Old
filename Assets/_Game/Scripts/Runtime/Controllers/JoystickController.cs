@@ -97,7 +97,7 @@ namespace _Game.Controllers
                     if (Physics.Raycast(_rayOrigin.position, Vector3.down, _rayDistance, _groundLayerMask))
                     {
                         var objectTransform = transform;
-                        objectTransform.position += objectTransform.forward * _speed * Time.deltaTime;
+                        objectTransform.position += objectTransform.forward * (_speed * Time.deltaTime);
                     }
                 }
             }
