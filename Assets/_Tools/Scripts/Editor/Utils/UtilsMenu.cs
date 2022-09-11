@@ -19,6 +19,9 @@ namespace _Tools.Utils
         [MenuItem("Tools/Scene Tools/UI Presets/Create Splash UI")]
         public static void CreateSplashUI() => SceneHelpers.CreateSplashUI();
 
+        [MenuItem("Tools/Scene Tools/Scene Presets/Create Joystick Controller Scene")]
+        public static void CreateJoystickControllerScene() => SceneHelpers.CreateJoystickControllerScene();
+
         #endregion
     }
 }

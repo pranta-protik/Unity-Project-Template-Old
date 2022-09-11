@@ -1,12 +1,15 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using _Game.Managers;
 using _Tools.Managers;
 using _Tools.Utils;
+using Cinemachine;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Object = UnityEngine.Object;
 
 namespace _Tools.Helpers
 {
@@ -80,7 +83,7 @@ namespace _Tools.Helpers
 
             if (!splashUIGroupGO)
             {
-                EditorUtils.DisplayDialogBox("Error", "Unable to find the SplashUI_GRP prefab");
+                EditorUtils.DisplayDialogBox("Error", "Unable to find the SplashUI_GRP prefab!");
                 return;
             }
 
@@ -89,6 +92,64 @@ namespace _Tools.Helpers
             Object.DestroyImmediate(currentSplashUIGroupGO);
 
             EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
+        }
+
+        public static void CreateJoystickControllerScene()
+        {
+            CommonSceneSetup();
+
+            var playerCamPrefab =
+                AssetDatabase.LoadAssetAtPath("Assets/_Game/Prefabs/Camera/Joystick/PlayerCam.prefab", typeof(GameObject)) as GameObject;
+
+            var playerCamGO = InstantiateAsPrefab(playerCamPrefab, "PlayerCam");
+            
+            var playerPrefab = AssetDatabase.LoadAssetAtPath("Assets/_Game/Prefabs/Characters/Joystick/Player.prefab", typeof(GameObject)) as GameObject;
+
+            var playerGO = InstantiateAsGameObject(playerPrefab, "Player");
+
+            playerCamGO.GetComponent<CinemachineVirtualCamera>().m_Follow = playerGO.transform;
+
+            var platformPrefab = AssetDatabase.LoadAssetAtPath("Assets/_Game/Prefabs/Env/Platform.prefab", typeof(GameObject)) as GameObject;
+            InstantiateAsPrefab(platformPrefab, "Platform");
+        }
+
+        private static void CommonSceneSetup()
+        {
+            var directionalLightPrefab =
+                AssetDatabase.LoadAssetAtPath("Assets/_Game/Prefabs/Env/Lighting/Directional Light.prefab", typeof(GameObject)) as GameObject;
+            InstantiateAsPrefab(directionalLightPrefab, "Directional Light");
+
+            var mainCameraPrefab = AssetDatabase.LoadAssetAtPath("Assets/_Game/Prefabs/Camera/Main Camera.prefab", typeof(GameObject)) as GameObject;
+            InstantiateAsPrefab(mainCameraPrefab, "Main Prefab");
+
+        }
+
+        private static GameObject InstantiateAsPrefab(GameObject prefabGO, string prefabName)
+        {
+            if (prefabGO)
+            {
+                var currentPrefabGO = PrefabUtility.InstantiatePrefab(prefabGO) as GameObject;
+                EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
+
+                return currentPrefabGO;
+            }
+            
+            EditorUtils.DisplayDialogBox("Error", $"Unable to find the {prefabName} prefab!");
+            return null;
+        }
+
+        private static GameObject InstantiateAsGameObject(GameObject prefabGO, string prefabName)
+        {
+            if (prefabGO)
+            {
+                var currentPrefabGO = Object.Instantiate(prefabGO);
+                currentPrefabGO.name = currentPrefabGO.name.Substring(0, currentPrefabGO.name.IndexOf("(Clone)", StringComparison.Ordinal));
+                EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
+                return currentPrefabGO;
+            }
+            
+            EditorUtils.DisplayDialogBox("Error", $"Unable to find the {prefabName} prefab!");
+            return null;
         }
         
         #endregion
