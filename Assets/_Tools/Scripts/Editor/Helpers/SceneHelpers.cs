@@ -95,6 +95,23 @@ namespace _Tools.Helpers
             EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
         }
 
+        public static void CreateLevelUI()
+        {
+            var levelUIGroupGO = AssetDatabase.LoadAssetAtPath("Assets/_Game/Prefabs/UI/LevelUI_GRP.prefab", typeof(GameObject)) as GameObject;
+
+            if (!levelUIGroupGO)
+            {
+                EditorUtils.DisplayDialogBox("Error", "Unable to find the LevelUI_GRP prefab!");
+                return;
+            }
+
+            var currentLevelUIGroupGO = Object.Instantiate(levelUIGroupGO);
+            currentLevelUIGroupGO.transform.DetachChildren();
+            Object.DestroyImmediate(currentLevelUIGroupGO);
+
+            EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
+        }
+
         public static void CreateJoystickControllerScene()
         {
             CommonSceneSetup();

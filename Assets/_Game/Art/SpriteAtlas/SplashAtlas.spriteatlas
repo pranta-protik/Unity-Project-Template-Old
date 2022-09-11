@@ -64,5 +64,5 @@ SpriteAtlas:
   - ProgressBarInnerPart
   - ProgressBarOutline
   m_RenderDataMap: {}
-  m_Tag: SplashUI
+  m_Tag: SplashAtlas
   m_IsVariant: 0

@@ -1,3 +1,4 @@
+using System;
 using _Tools.Helpers;
 using UnityEngine;
 
@@ -30,6 +31,8 @@ namespace _Game.Controllers
         #endregion
 
         #region Unity Methods
+
+        private void Awake() => EnableControl();
 
         private void Update()
         {

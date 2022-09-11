@@ -32,7 +32,7 @@ namespace _Game.Controllers
 
         #region Unity Methods
 
-        private void Start() => EnableControl();
+        private void Awake() => EnableControl();
 
         private void Update()
         {
