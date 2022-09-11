@@ -590,7 +590,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1609533666}
           m_TargetAssemblyTypeName: _Game.UI.LevelStartPanel, game.scripts.runtime
-          m_MethodName: DisablePanel
+          m_MethodName: LevelStart
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

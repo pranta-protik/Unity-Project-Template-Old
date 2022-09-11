@@ -1,5 +1,6 @@
-using System;
 using _Game.Helpers;
+using _Game.Managers;
+using _Tools.Extensions;
 using _Tools.Helpers;
 using DG.Tweening;
 using UnityEngine;
@@ -32,17 +33,27 @@ namespace _Game.Controllers
 
         #region Unity Methods
 
-        private void Awake() => EnableControl();
-
+        private void Start()
+        {
+            if(GameManager.Instance.IsNotNull(nameof(GameManager))) GameManager.Instance.OnLevelStart += GameManager_OnLevelStart;
+        }
+        
         private void Update()
         {
             if (_canControl) HandleControl();
+        }
+
+        private void OnDestroy()
+        {
+            if (GameManager.Instance) GameManager.Instance.OnLevelStart -= GameManager_OnLevelStart;
         }
 
         #endregion
 
         #region Custom Methods
 
+        private void GameManager_OnLevelStart() => EnableControl();
+        
         private void HandleControl()
         {
             HandleKeyboardControl();

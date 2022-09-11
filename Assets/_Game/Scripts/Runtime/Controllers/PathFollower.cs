@@ -1,3 +1,4 @@
+using _Game.Managers;
 using _Tools.Extensions;
 using PathCreation;
 using UnityEngine;
@@ -25,8 +26,7 @@ namespace _Game.Controllers
 
         private void Start()
         {
-            StartFollowing();
-            
+            if(GameManager.Instance.IsNotNull(nameof(GameManager))) GameManager.Instance.OnLevelStart += GameManager_OnLevelStart;
             if (_path.IsNotNull(nameof(PathCreator), transform)) _path.pathUpdated += OnPathChanged;
         }
 
@@ -37,12 +37,15 @@ namespace _Game.Controllers
 
         private void OnDestroy()
         {
+            if (GameManager.Instance) GameManager.Instance.OnLevelStart -= GameManager_OnLevelStart;
             if (_path) _path.pathUpdated -= OnPathChanged;
         }
 
         #endregion
 
         #region Custom Methods
+        
+        private void GameManager_OnLevelStart() => StartFollowing();
 
         private void FollowPath()
         {

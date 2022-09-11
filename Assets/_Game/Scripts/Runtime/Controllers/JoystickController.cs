@@ -1,4 +1,5 @@
-using System;
+using _Tools.Extensions;
+using _Game.Managers;
 using _Tools.Helpers;
 using UnityEngine;
 
@@ -32,13 +33,21 @@ namespace _Game.Controllers
 
         #region Unity Methods
 
-        private void Awake() => EnableControl();
+        private void Start()
+        {
+            if (GameManager.Instance.IsNotNull(nameof(GameManager))) GameManager.Instance.OnLevelStart += GameManager_OnLevelStart;
+        }
 
         private void Update()
         {
             if(_canControl) HandleControl();
         }
 
+        private void OnDestroy()
+        {
+            if (GameManager.Instance) GameManager.Instance.OnLevelStart -= GameManager_OnLevelStart;
+        }
+        
 #if UNITY_EDITOR
         private void OnDrawGizmosSelected()
         {
@@ -57,6 +66,8 @@ namespace _Game.Controllers
 
         #region Custom Methods
 
+        private void GameManager_OnLevelStart() => EnableControl();
+        
         private void HandleControl()
         {
             _currentPosition = Input.mousePosition;

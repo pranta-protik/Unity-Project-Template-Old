@@ -17,7 +17,7 @@ namespace _Tools.Extensions
         /// <returns>Returns true if not null, otherwise returns false.</returns>
         public static bool IsNotNull(this Component originalComponent, string refComponentName, [CanBeNull] Transform refTransform = null)
         {
-            if (refTransform) return true;
+            if (originalComponent) return true;
 
             if (refTransform)
             {

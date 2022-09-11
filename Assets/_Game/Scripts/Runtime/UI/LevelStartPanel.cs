@@ -1,3 +1,5 @@
+using _Tools.Extensions;
+using _Game.Managers;
 using UnityEngine;
 
 namespace _Game.UI
@@ -6,7 +8,13 @@ namespace _Game.UI
     {
         #region Custom Methods
 
-        public void DisablePanel() => gameObject.SetActive(false);
+        public void LevelStart()
+        {
+            if (GameManager.Instance.IsNotNull(nameof(GameManager))) GameManager.Instance.LevelStart();
+            DisablePanel();
+        }
+
+        private void DisablePanel() => gameObject.SetActive(false);
 
         #endregion
     }

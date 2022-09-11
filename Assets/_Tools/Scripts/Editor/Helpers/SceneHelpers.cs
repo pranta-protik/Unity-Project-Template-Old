@@ -160,7 +160,18 @@ namespace _Tools.Helpers
 
             var mainCameraPrefab = AssetDatabase.LoadAssetAtPath("Assets/_Game/Prefabs/Camera/Main Camera.prefab", typeof(GameObject)) as GameObject;
             InstantiateAsPrefab(mainCameraPrefab, "Main Prefab");
-
+            
+            var managerGroupGO = new GameObject("Manager_GRP");
+            
+            var gameManagerPrefab = AssetDatabase.LoadAssetAtPath("Assets/_Game/Prefabs/Managers/GameManager.prefab", typeof(GameObject)) as GameObject;
+            var currentGameManagerPrefab = InstantiateAsPrefab(gameManagerPrefab, "GameManager");
+            
+            currentGameManagerPrefab.transform.SetParent(managerGroupGO.transform);
+            
+            var uiManagerPrefab = AssetDatabase.LoadAssetAtPath("Assets/_Game/Prefabs/Managers/UIManager.prefab", typeof(GameObject)) as GameObject;
+            var currentUIManagerPrefab = InstantiateAsPrefab(uiManagerPrefab, "UIManager");
+            
+            currentUIManagerPrefab.transform.SetParent(managerGroupGO.transform);
         }
 
         private static GameObject InstantiateAsPrefab(GameObject prefabGO, string prefabName)
