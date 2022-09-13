@@ -13,7 +13,10 @@ namespace _Game.Managers
 
         #region Custom Methods
 
-        public void LevelStart() => OnLevelStart?.Invoke();
+        public void LevelStart()
+        {
+            OnLevelStart?.Invoke();
+        }
 
         #endregion
     }
