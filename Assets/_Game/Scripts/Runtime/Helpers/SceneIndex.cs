@@ -1,6 +1,6 @@
 namespace _Game.Helpers
 {
-    public enum SceneIndexes
+    public enum SceneIndex
     {
         LOADING = 0,
         SPLASH = 1,

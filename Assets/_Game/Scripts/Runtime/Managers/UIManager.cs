@@ -8,7 +8,7 @@ namespace _Game.Managers
     {
         #region Unity Methods
 
-        private void Start() => SceneUtils.LoadSpecificScene((int)SceneIndexes.UI, LoadSceneMode.Additive);
+        private void Start() => SceneUtils.LoadSpecificScene((int)SceneIndex.UI, LoadSceneMode.Additive);
 
         #endregion
     }

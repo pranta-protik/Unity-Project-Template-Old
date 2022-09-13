@@ -31,7 +31,7 @@ namespace _Game.UI
             if (_startTime >= _loadingTime && _isLoading)
             {
                 _isLoading = false;
-                SceneUtils.LoadSpecificScene((int) SceneIndexes.GAME);
+                SceneUtils.LoadSpecificScene((int) SceneIndex.GAME);
             }
             else
             {

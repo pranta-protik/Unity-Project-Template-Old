@@ -9,7 +9,7 @@ namespace _Game.Managers
         #region Variables
 
         [SerializeField, Min(0)] private int _totalSceneCount;
-        [SerializeField, Min(0)] private int _firstLevelSceneIndex = (int)SceneIndexes.GAME;
+        [SerializeField, Min(0)] private int _firstLevelSceneIndex = (int)SceneIndex.GAME;
 
         #endregion
 
@@ -28,12 +28,12 @@ namespace _Game.Managers
             
             if (PlayerPrefs.GetInt(ConstUtils.FIRST_TIME_PLAYING, 0) == 0)
             {
-                SceneUtils.LoadSpecificScene((int)SceneIndexes.SPLASH);
+                SceneUtils.LoadSpecificScene((int)SceneIndex.SPLASH);
                 PlayerPrefs.SetInt(ConstUtils.FIRST_TIME_PLAYING, 1);
             }
             else
             {
-                SceneUtils.LoadSpecificScene(PlayerPrefs.GetInt(ConstUtils.LAST_PLAYED_SCENE_INDEX, (int)SceneIndexes.GAME));
+                SceneUtils.LoadSpecificScene(PlayerPrefs.GetInt(ConstUtils.LAST_PLAYED_SCENE_INDEX, (int)SceneIndex.GAME));
             }
         }
         

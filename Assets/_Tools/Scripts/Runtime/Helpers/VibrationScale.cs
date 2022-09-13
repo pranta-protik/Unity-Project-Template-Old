@@ -2,7 +2,7 @@ using MoreMountains.NiceVibrations;
 
 namespace _Tools.Helpers
 {
-    public enum VibrationScales
+    public enum VibrationScale
     {
         Light = HapticTypes.LightImpact,
         Medium = HapticTypes.MediumImpact,

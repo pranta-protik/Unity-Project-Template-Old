@@ -21,7 +21,7 @@ namespace _Tools.Helpers
 
         #region Custom Methods
 
-        public static void VibrateDevice(VibrationScales vibrationScale)
+        public static void VibrateDevice(VibrationScale vibrationScale)
         {
             if (_VibrationStatus == 0) return;
 
