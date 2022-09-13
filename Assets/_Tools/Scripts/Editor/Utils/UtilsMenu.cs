@@ -15,17 +15,17 @@ namespace _Tools.Utils
 
         [MenuItem("Tools/Scene Tools/Manager Presets/Create Scene Load Manager")]
         public static void CreateSceneLoadManager() => SceneHelpers.CreateSceneLoadManager();
-
-        [MenuItem("Tools/Scene Tools/UI Presets/Create Splash UI")]
+        
+        [MenuItem("Tools/Scene Tools/Scene Presets/UI Scenes/Create Splash UI Scene")]
         public static void CreateSplashUI() => SceneHelpers.CreateSplashUI();
         
-        [MenuItem("Tools/Scene Tools/UI Presets/Create Level UI")]
+        [MenuItem("Tools/Scene Tools/Scene Presets/UI Scenes/Create Level UI Scene")]
         public static void CreateLevelUI() => SceneHelpers.CreateLevelUI();
-
-        [MenuItem("Tools/Scene Tools/Scene Presets/Create Joystick Controller Scene")]
+        
+        [MenuItem("Tools/Scene Tools/Scene Presets/Game Scenes/Create Joystick Controller Scene")]
         public static void CreateJoystickControllerScene() => SceneHelpers.CreateJoystickControllerScene();
         
-        [MenuItem("Tools/Scene Tools/Scene Presets/Create Runner Controller Scene")]
+        [MenuItem("Tools/Scene Tools/Scene Presets/Game Scenes/Create Runner Controller Scene")]
         public static void CreateRunnerControllerScene() => SceneHelpers.CreateRunnerControllerScene();
 
         #endregion

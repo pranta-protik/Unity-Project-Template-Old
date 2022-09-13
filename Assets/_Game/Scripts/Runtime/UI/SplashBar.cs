@@ -1,5 +1,5 @@
 using _Game.Helpers;
-using _Game.Managers;
+using _Tools.Helpers;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,25 +25,13 @@ namespace _Game.UI
             _isLoading = true;
             _fillMask.fillAmount = 0f;
         }
-        
-#if UNITY_EDITOR
-        private void Start()
-        {
-            if (SceneLoadManager.Instance) return;
-            
-            var sceneLoadManagerGO = new GameObject("SceneLoadManager");
-            sceneLoadManagerGO.SetActive(false);
-            sceneLoadManagerGO.AddComponent<SceneLoadManager>().EnableTestMode();
-            sceneLoadManagerGO.SetActive(true);
-        }
-#endif
 
         private void Update()
         {
             if (_startTime >= _loadingTime && _isLoading)
             {
                 _isLoading = false;
-                SceneLoadManager.Instance.LoadSpecificScene((int) SceneIndexes.GAME);
+                SceneUtils.LoadSpecificScene((int) SceneIndexes.GAME);
             }
             else
             {

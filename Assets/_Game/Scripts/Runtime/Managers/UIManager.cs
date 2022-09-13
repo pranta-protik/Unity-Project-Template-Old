@@ -1,5 +1,6 @@
+using _Game.Helpers;
 using _Tools.Helpers;
-using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace _Game.Managers
 {
@@ -7,19 +8,7 @@ namespace _Game.Managers
     {
         #region Unity Methods
 
-        private void Start()
-        {
-#if UNITY_EDITOR
-            if (!SceneLoadManager.Instance)
-            {
-                var sceneLoadManagerGO = new GameObject("SceneLoadManager");
-                sceneLoadManagerGO.SetActive(false);
-                sceneLoadManagerGO.AddComponent<SceneLoadManager>().EnableTestMode();
-                sceneLoadManagerGO.SetActive(true);   
-            }
-#endif
-            SceneLoadManager.Instance.LoadUIScene();
-        }
+        private void Start() => SceneUtils.LoadSpecificScene((int)SceneIndexes.UI, LoadSceneMode.Additive);
 
         #endregion
     }

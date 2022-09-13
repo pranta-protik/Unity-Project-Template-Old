@@ -7,12 +7,12 @@ namespace _Tools.Helpers
     public class MaterialStylerEditor : Editor
     {
         #region Variables
-        
-        private SerializedProperty _materialColorProperty;
-        private SerializedProperty _materialTextureProperty;
-        private SerializedProperty _materialMetallicProperty;
-        private SerializedProperty _materialSmoothnessProperty;
-        private SerializedProperty _materialNormalProperty;
+
+        private SerializedProperty _colorProperty;
+        private SerializedProperty _textureProperty;
+        private SerializedProperty _metallicProperty;
+        private SerializedProperty _smoothnessProperty;
+        private SerializedProperty _normalProperty;
         private SerializedProperty _isTextureEnabledProperty;
         private SerializedProperty _isNormalEnabledProperty;
         private SerializedProperty _materialIndexProperty;
@@ -22,13 +22,15 @@ namespace _Tools.Helpers
 
         #region Unity Methods
 
-        private void OnEnable()
+        private void OnEnable() => Init();
+
+        protected virtual void Init()
         {
-            _materialColorProperty = serializedObject.FindProperty("_materialColor");
-            _materialTextureProperty = serializedObject.FindProperty("_materialTexture");
-            _materialMetallicProperty = serializedObject.FindProperty("_materialMetallic");
-            _materialSmoothnessProperty = serializedObject.FindProperty("_materialSmoothness");
-            _materialNormalProperty = serializedObject.FindProperty("_materialNormal");
+            _colorProperty = serializedObject.FindProperty("_color");
+            _textureProperty = serializedObject.FindProperty("_texture");
+            _metallicProperty = serializedObject.FindProperty("_metallic");
+            _smoothnessProperty = serializedObject.FindProperty("_smoothness");
+            _normalProperty = serializedObject.FindProperty("_normal");
             _isTextureEnabledProperty = serializedObject.FindProperty("_isTextureEnabled");
             _isNormalEnabledProperty = serializedObject.FindProperty("_isNormalEnabled");
             _rendererProperty = serializedObject.FindProperty("_renderer");
@@ -38,30 +40,44 @@ namespace _Tools.Helpers
         public override void OnInspectorGUI()
         {
             serializedObject.Update();
-
-            EditorGUILayout.PropertyField(_materialColorProperty);
-            if (_isTextureEnabledProperty.boolValue) EditorGUILayout.PropertyField(_materialTextureProperty);
             
-            EditorGUILayout.PropertyField(_materialMetallicProperty);
-            EditorGUILayout.PropertyField(_materialSmoothnessProperty);
-            
-            if (_isNormalEnabledProperty.boolValue) EditorGUILayout.PropertyField(_materialNormalProperty);
-
+            CustomInspectorTop();
             EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
+            CustomInspectorMid();
+            EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
+            CustomInspectorBottom();
 
+            serializedObject.ApplyModifiedProperties();
+        }
+
+        protected virtual void CustomInspectorTop()
+        {
+            EditorGUILayout.PropertyField(_colorProperty);
+            if (_isTextureEnabledProperty.boolValue) EditorGUILayout.PropertyField(_textureProperty);
+
+            EditorGUILayout.PropertyField(_metallicProperty);
+            EditorGUILayout.PropertyField(_smoothnessProperty);
+
+            if (_isNormalEnabledProperty.boolValue) EditorGUILayout.PropertyField(_normalProperty);
+        }
+
+        protected virtual void CustomInspectorMid()
+        {
             EditorGUILayout.BeginHorizontal();
             GUILayout.Label("Texture");
             EditorGUILayout.PropertyField(_isTextureEnabledProperty, GUIContent.none);
+            EditorGUILayout.EndHorizontal();
+            
+            EditorGUILayout.BeginHorizontal();
             GUILayout.Label("Normal");
             EditorGUILayout.PropertyField(_isNormalEnabledProperty, GUIContent.none);
             EditorGUILayout.EndHorizontal();
+        }
 
-            EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
-
+        private void CustomInspectorBottom()
+        {
             EditorGUILayout.PropertyField(_materialIndexProperty);
             EditorGUILayout.PropertyField(_rendererProperty);
-
-            serializedObject.ApplyModifiedProperties();
         }
 
         #endregion

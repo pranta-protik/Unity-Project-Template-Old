@@ -1,7 +1,6 @@
 using _Game.Helpers;
 using _Tools.Helpers;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace _Game.Managers
 {
@@ -11,7 +10,6 @@ namespace _Game.Managers
 
         [SerializeField, Min(0)] private int _totalSceneCount;
         [SerializeField, Min(0)] private int _firstLevelSceneIndex = (int)SceneIndexes.GAME;
-        [SerializeField] private bool _isTestEnabled;
 
         #endregion
 
@@ -27,37 +25,18 @@ namespace _Game.Managers
         protected override void OnAwake()
         {
             base.OnAwake();
-
-            if (_isTestEnabled) return;
-
+            
             if (PlayerPrefs.GetInt(ConstUtils.FIRST_TIME_PLAYING, 0) == 0)
             {
-                SceneManager.LoadSceneAsync((int)SceneIndexes.SPLASH);
+                SceneUtils.LoadSpecificScene((int)SceneIndexes.SPLASH);
                 PlayerPrefs.SetInt(ConstUtils.FIRST_TIME_PLAYING, 1);
             }
             else
             {
-                LoadLastPlayedScene();
+                SceneUtils.LoadSpecificScene(PlayerPrefs.GetInt(ConstUtils.LAST_PLAYED_SCENE_INDEX, (int)SceneIndexes.GAME));
             }
         }
-
-        #endregion
-
-        #region Custom Methods
-
-        private static void LoadLastPlayedScene()
-        {
-            SceneManager.LoadSceneAsync(PlayerPrefs.GetInt(ConstUtils.LAST_PLAYED_SCENE_INDEX, (int)SceneIndexes.GAME));
-        }
-
-        public void LoadSpecificScene(int sceneIndex) => SceneManager.LoadSceneAsync(sceneIndex);
-
-        public void ReloadScene() => SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
-
-        public void LoadUIScene() => SceneManager.LoadSceneAsync((int)SceneIndexes.UI, LoadSceneMode.Additive);
-
-        public void EnableTestMode() => _isTestEnabled = true;
-
+        
         #endregion
     }
 }

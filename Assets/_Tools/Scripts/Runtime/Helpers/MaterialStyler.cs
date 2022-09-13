@@ -3,15 +3,15 @@ using UnityEngine;
 namespace _Tools.Helpers
 {
     [ExecuteAlways]
-    public class MaterialStyler : MonoBehaviour
+    public abstract class MaterialStyler : MonoBehaviour
     {
         #region Variables
 
-        [SerializeField] private Color _materialColor = Color.white;
-        [SerializeField] private Texture2D _materialTexture;
-        [SerializeField] [Range(0f, 1f)] private float _materialMetallic;
-        [SerializeField] [Range(0f, 1f)] private float _materialSmoothness = 0.5f;
-        [SerializeField] private Texture2D _materialNormal;
+        [SerializeField] private Color _color = Color.white;
+        [SerializeField] private Texture2D _texture;
+        [SerializeField] [Range(0f, 1f)] private float _metallic;
+        [SerializeField] [Range(0f, 1f)] private float _smoothness = 0.5f;
+        [SerializeField] private Texture2D _normal;
         [SerializeField] private bool _isTextureEnabled;
         [SerializeField] private bool _isNormalEnabled;
         [SerializeField] private int _materialIndex;
@@ -28,7 +28,7 @@ namespace _Tools.Helpers
 
         #region Properties
 
-        private MaterialPropertyBlock Mpb => _mpb ??= new MaterialPropertyBlock();
+        protected MaterialPropertyBlock Mpb => _mpb ??= new MaterialPropertyBlock();
 
         #endregion
 
@@ -56,28 +56,33 @@ namespace _Tools.Helpers
 
         private void TryApplyStyle()
         {
-            if (!_isTextureEnabled) _materialTexture = null;
-            if (!_isNormalEnabled) _materialNormal = null;
-            
-            if (_materialTexture) Mpb.SetTexture(MainTex, _materialTexture);
+            ConfigureStyle();
+            if(_renderer) _renderer.SetPropertyBlock(Mpb, _materialIndex);
+        }
 
-            if (_materialNormal)
+        protected virtual void ConfigureStyle()
+        {
+            if (!_isTextureEnabled) _texture = null;
+            if (!_isNormalEnabled) _normal = null;
+            
+            if (_texture) Mpb.SetTexture(MainTex, _texture);
+
+            if (_normal)
             {
                 _renderer.sharedMaterials[_materialIndex].EnableKeyword("NORMALMAP");
-                Mpb.SetTexture(BumpMap, _materialNormal);
+                Mpb.SetTexture(BumpMap, _normal);
             }
 
-            if (!_materialTexture && !_materialNormal) Mpb.Clear();
+            if (!_texture && !_normal) Mpb.Clear();
             
-            Mpb.SetColor(MatColor, _materialColor);
-            Mpb.SetFloat(Metallic, _materialMetallic);
-            Mpb.SetFloat(Glossiness, _materialSmoothness);
-            if(_renderer) _renderer.SetPropertyBlock(Mpb, _materialIndex);
+            Mpb.SetColor(MatColor, _color);
+            Mpb.SetFloat(Metallic, _metallic);
+            Mpb.SetFloat(Glossiness, _smoothness);
         }
 
         public void SetColor(Color matColor)
         {
-            _materialColor = matColor;
+            _color = matColor;
             TryApplyStyle();
         }
 

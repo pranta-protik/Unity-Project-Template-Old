@@ -11,7 +11,6 @@ namespace _Game.Managers
         private SerializedProperty _dontDestroyOnLoadProperty;
         private SerializedProperty _totalSceneCountProperty;
         private SerializedProperty _firstLevelSceneIndexProperty;
-        private SerializedProperty _isTestEnabledProperty;
 
         #endregion
 
@@ -22,14 +21,11 @@ namespace _Game.Managers
             _dontDestroyOnLoadProperty = serializedObject.FindProperty("_dontDestroyOnLoad");
             _totalSceneCountProperty = serializedObject.FindProperty("_totalSceneCount");
             _firstLevelSceneIndexProperty = serializedObject.FindProperty("_firstLevelSceneIndex");
-            _isTestEnabledProperty = serializedObject.FindProperty("_isTestEnabled");
         }
 
         public override void OnInspectorGUI()
         {
             serializedObject.Update();
-
-            _dontDestroyOnLoadProperty.boolValue = !_isTestEnabledProperty.boolValue;
 
             _totalSceneCountProperty.intValue = EditorBuildSettingsScene.GetActiveSceneList(EditorBuildSettings.scenes).Length;
 
@@ -37,11 +33,7 @@ namespace _Game.Managers
             EditorGUILayout.PropertyField(_firstLevelSceneIndexProperty);
             
             EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
-
-            EditorGUI.BeginDisabledGroup(true);
-            EditorGUILayout.Toggle("Enable Test Mode", _isTestEnabledProperty.boolValue);
-            EditorGUILayout.Toggle("Don't Destroy On Load", _dontDestroyOnLoadProperty.boolValue);
-            EditorGUI.EndDisabledGroup();
+            EditorGUILayout.PropertyField(_dontDestroyOnLoadProperty);
 
             serializedObject.ApplyModifiedProperties();
         }

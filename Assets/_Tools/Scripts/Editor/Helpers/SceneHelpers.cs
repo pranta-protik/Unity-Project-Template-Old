@@ -1,11 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using _Game.Controllers;
-using _Game.Managers;
 using _Tools.Managers;
 using _Tools.Utils;
-using Cinemachine;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -72,10 +69,11 @@ namespace _Tools.Helpers
 
         public static void CreateSceneLoadManager()
         {
-            var sceneLoadManagerGO = new GameObject("SceneLoadManager");
-            sceneLoadManagerGO.AddComponent<SceneLoadManager>();
+            var sceneLoadManagerGO = AssetDatabase.LoadAssetAtPath("Assets/_Game/Prefabs/Managers/SceneLoadManager.prefab", typeof(GameObject)) as GameObject;
 
-            Selection.activeGameObject = sceneLoadManagerGO;
+            var currentSceneLoadManagerGO = InstantiateAsGameObject(sceneLoadManagerGO, "SceneLoadManager");
+            
+            Selection.activeGameObject = currentSceneLoadManagerGO;
         }
 
         public static void CreateSplashUI()
@@ -114,64 +112,34 @@ namespace _Tools.Helpers
 
         public static void CreateJoystickControllerScene()
         {
-            CommonSceneSetup();
+            var joystickSceneGO = AssetDatabase.LoadAssetAtPath("Assets/_Game/Prefabs/DemoScenes/JoystickScene.prefab", typeof(GameObject)) as GameObject;
 
-            var playerCamPrefab =
-                AssetDatabase.LoadAssetAtPath("Assets/_Game/Prefabs/Camera/Joystick/PlayerCam.prefab", typeof(GameObject)) as GameObject;
-
-            var playerCamGO = InstantiateAsPrefab(playerCamPrefab, "PlayerCam");
+            var currentJoystickSceneGO = InstantiateAsPrefab(joystickSceneGO, "JoystickScene");
+            PrefabUtility.UnpackPrefabInstance(currentJoystickSceneGO, PrefabUnpackMode.OutermostRoot, InteractionMode.AutomatedAction);
             
-            var playerPrefab = AssetDatabase.LoadAssetAtPath("Assets/_Game/Prefabs/Characters/Joystick/Player.prefab", typeof(GameObject)) as GameObject;
+            currentJoystickSceneGO.transform.DetachChildren();
+            Object.DestroyImmediate(currentJoystickSceneGO);
 
-            var playerGO = InstantiateAsGameObject(playerPrefab, "Player");
-
-            playerCamGO.GetComponent<CinemachineVirtualCamera>().m_Follow = playerGO.transform;
-
-            var platformPrefab = AssetDatabase.LoadAssetAtPath("Assets/_Game/Prefabs/Env/Platform.prefab", typeof(GameObject)) as GameObject;
-            InstantiateAsPrefab(platformPrefab, "Platform");
+            var playerGO = GameObject.Find("Player");
+            PrefabUtility.UnpackPrefabInstance(playerGO, PrefabUnpackMode.Completely, InteractionMode.AutomatedAction);
+            
+            EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
         }
 
         public static void CreateRunnerControllerScene()
         {
-            CommonSceneSetup();
-            
-            var pathPrefab = AssetDatabase.LoadAssetAtPath("Assets/_Game/Prefabs/Env/Path.prefab", typeof(GameObject)) as GameObject;
-            InstantiateAsPrefab(pathPrefab, "Path");
-            
-            var playerCamPrefab =
-                AssetDatabase.LoadAssetAtPath("Assets/_Game/Prefabs/Camera/Runner/PlayerCam.prefab", typeof(GameObject)) as GameObject;
+            var runnerSceneGO = AssetDatabase.LoadAssetAtPath("Assets/_Game/Prefabs/DemoScenes/RunnerScene.prefab", typeof(GameObject)) as GameObject;
 
-            var playerCamGO = InstantiateAsPrefab(playerCamPrefab, "PlayerCam");
+            var currentRunnerSceneGO = InstantiateAsPrefab(runnerSceneGO, "RunnerScene");
+            PrefabUtility.UnpackPrefabInstance(currentRunnerSceneGO, PrefabUnpackMode.OutermostRoot, InteractionMode.AutomatedAction);
             
-            var playerPrefab = AssetDatabase.LoadAssetAtPath("Assets/_Game/Prefabs/Characters/Runner/Player.prefab", typeof(GameObject)) as GameObject;
-
-            var playerGO = InstantiateAsGameObject(playerPrefab, "Player");
-
-            playerCamGO.GetComponent<CinemachineVirtualCamera>().m_Follow = playerGO.transform.GetChild(0);
+            currentRunnerSceneGO.transform.DetachChildren();
+            Object.DestroyImmediate(currentRunnerSceneGO);
             
-            playerGO.GetComponent<PathFollower>().FindPathFromScene();
-        }
-        
-        private static void CommonSceneSetup()
-        {
-            var directionalLightPrefab =
-                AssetDatabase.LoadAssetAtPath("Assets/_Game/Prefabs/Env/Lighting/Directional Light.prefab", typeof(GameObject)) as GameObject;
-            InstantiateAsPrefab(directionalLightPrefab, "Directional Light");
-
-            var mainCameraPrefab = AssetDatabase.LoadAssetAtPath("Assets/_Game/Prefabs/Camera/Main Camera.prefab", typeof(GameObject)) as GameObject;
-            InstantiateAsPrefab(mainCameraPrefab, "Main Prefab");
+            var playerGO = GameObject.Find("Player");
+            PrefabUtility.UnpackPrefabInstance(playerGO, PrefabUnpackMode.Completely, InteractionMode.AutomatedAction);
             
-            var managerGroupGO = new GameObject("Manager_GRP");
-            
-            var gameManagerPrefab = AssetDatabase.LoadAssetAtPath("Assets/_Game/Prefabs/Managers/GameManager.prefab", typeof(GameObject)) as GameObject;
-            var currentGameManagerPrefab = InstantiateAsPrefab(gameManagerPrefab, "GameManager");
-            
-            currentGameManagerPrefab.transform.SetParent(managerGroupGO.transform);
-            
-            var uiManagerPrefab = AssetDatabase.LoadAssetAtPath("Assets/_Game/Prefabs/Managers/UIManager.prefab", typeof(GameObject)) as GameObject;
-            var currentUIManagerPrefab = InstantiateAsPrefab(uiManagerPrefab, "UIManager");
-            
-            currentUIManagerPrefab.transform.SetParent(managerGroupGO.transform);
+            EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
         }
 
         private static GameObject InstantiateAsPrefab(GameObject prefabGO, string prefabName)

@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 847151501218720032}
   - component: {fileID: 847151501218720034}
   - component: {fileID: 847151501218720033}
-  - component: {fileID: 847151501218720035}
+  - component: {fileID: 8797821558146347048}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -130,7 +130,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &847151501218720035
+--- !u!114 &8797821558146347048
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,14 +139,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 847151501218720047}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e8efb284fa46848b998fc0f72cd30a, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e1d52d69113f9748b9e5b3cb4830a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _materialColor: {r: 0, g: 1, b: 0.5294118, a: 1}
-  _materialTexture: {fileID: 0}
-  _materialMetallic: 0
-  _materialSmoothness: 0.5
-  _materialNormal: {fileID: 0}
+  _color: {r: 0, g: 1, b: 0.59551597, a: 1}
+  _texture: {fileID: 0}
+  _metallic: 0
+  _smoothness: 0.5
+  _normal: {fileID: 0}
   _isTextureEnabled: 0
   _isNormalEnabled: 0
   _materialIndex: 0

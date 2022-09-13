@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6812532146592163646}
   - component: {fileID: 6812532146592163647}
   m_Layer: 0
-  m_Name: PlayerVisual
+  m_Name: Visual
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -193,7 +193,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: aef023429695f7e449d2aab02a8c6cc6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -224,14 +224,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 6812532148267018617}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e8efb284fa46848b998fc0f72cd30a, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e1d52d69113f9748b9e5b3cb4830a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _materialColor: {r: 1, g: 0.52156866, b: 0, a: 1}
-  _materialTexture: {fileID: 0}
-  _materialMetallic: 0
-  _materialSmoothness: 0.5
-  _materialNormal: {fileID: 0}
+  _color: {r: 1, g: 0.5615012, b: 0, a: 1}
+  _texture: {fileID: 0}
+  _metallic: 0
+  _smoothness: 0.5
+  _normal: {fileID: 0}
   _isTextureEnabled: 0
   _isNormalEnabled: 0
   _materialIndex: 0
