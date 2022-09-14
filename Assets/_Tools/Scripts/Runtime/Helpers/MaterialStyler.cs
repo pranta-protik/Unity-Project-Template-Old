@@ -34,7 +34,11 @@ namespace _Tools.Helpers
 
         #region Unity Methods
 
-        private void Awake() => FindRenderer();
+        private void Awake()
+        {
+            FindRenderer();
+            TryApplyStyle();
+        }
 
 #if UNITY_EDITOR
         private void OnEnable()
