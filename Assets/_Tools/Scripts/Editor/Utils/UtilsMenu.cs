@@ -13,10 +13,10 @@ namespace _Tools.Utils
         [MenuItem("Tools/Scene Tools/Manager Presets/Create Log Manager")]
         public static void CreateLogManager() => SceneHelpers.CreateLogManager();
 
-        [MenuItem("Tools/Scene Tools/Manager Presets/Create Scene Load Manager")]
-        public static void CreateSceneLoadManager() => SceneHelpers.CreateSceneLoadManager();
+        [MenuItem("Tools/Scene Tools/Scene Presets/Create Persistent Scene")]
+        public static void CreatePersistentScene() => SceneHelpers.CreatePersistentScene();
         
-        [MenuItem("Tools/Scene Tools/Scene Presets/UI Scenes/Create Splash UI Scene")]
+        [MenuItem("Tools/Scene Tools/Scene Presets/UI Scenes/Create Splash Scene")]
         public static void CreateSplashUI() => SceneHelpers.CreateSplashUI();
         
         [MenuItem("Tools/Scene Tools/Scene Presets/UI Scenes/Create Level UI Scene")]

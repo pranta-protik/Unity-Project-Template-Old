@@ -4,19 +4,12 @@ using UnityEngine;
 
 namespace _Game.Managers
 {
-    public class SceneLoadManager : Singleton<SceneLoadManager>
+    public class LevelManager : Singleton<LevelManager>
     {
         #region Variables
 
-        [SerializeField, Min(0)] private int _totalSceneCount;
-        [SerializeField, Min(0)] private int _firstLevelSceneIndex = (int)SceneIndex.GAME;
-
-        #endregion
-
-        #region Properites
-
-        public int TotalSceneCount => _totalSceneCount;
-        public int FirstLevelSceneIndex => _firstLevelSceneIndex;
+        private int _totalSceneCount;
+        private int _firstLevelSceneIndex;
 
         #endregion
 
@@ -25,20 +18,13 @@ namespace _Game.Managers
         protected override void OnAwake()
         {
             base.OnAwake();
-            
-            if (PlayerPrefs.GetInt(ConstUtils.FIRST_TIME_PLAYING, 0) == 0)
-            {
-                SceneUtils.LoadSpecificScene((int)SceneIndex.SPLASH);
-                PlayerPrefs.SetInt(ConstUtils.FIRST_TIME_PLAYING, 1);
-            }
-            else
-            {
-                SceneUtils.LoadSpecificScene(PlayerPrefs.GetInt(ConstUtils.LAST_PLAYED_SCENE_INDEX, (int)SceneIndex.GAME));
-            }
-        }
-        
-        #endregion
 
+            _totalSceneCount = PlayerPrefs.GetInt(ConstUtils.TOTAL_SCENE_COUNT, 4);
+            _firstLevelSceneIndex = PlayerPrefs.GetInt(ConstUtils.FIRST_LEVEL_SCENE_INDEX, (int)SceneIndex.GAME);
+        }
+
+        #endregion
+        
         #region Custom Methods
 
         public int GetNextSceneIndex()

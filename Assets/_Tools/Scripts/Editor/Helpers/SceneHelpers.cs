@@ -30,7 +30,7 @@ namespace _Tools.Helpers
 
             if (sceneInfo.Exists)
             {
-                CreateScene(rootPath + "/Scenes", "Loading", true);
+                CreateScene(rootPath + "/Scenes", "Persistent", true);
                 CreateScene(rootPath + "/Scenes", "Splash", true);
                 CreateScene(rootPath + "/Scenes", "UI", true);
                 CreateScene(rootPath + "/Scenes", "Game");
@@ -67,13 +67,13 @@ namespace _Tools.Helpers
             Selection.activeGameObject = logManagerGO;
         }
 
-        public static void CreateSceneLoadManager()
+        public static void CreatePersistentScene()
         {
-            var sceneLoadManagerGO = AssetDatabase.LoadAssetAtPath("Assets/_Game/Prefabs/Managers/SceneLoadManager.prefab", typeof(GameObject)) as GameObject;
+            var initializerGO = AssetDatabase.LoadAssetAtPath("Assets/_Game/Prefabs/Persistent/Initializer.prefab", typeof(GameObject)) as GameObject;
 
-            var currentSceneLoadManagerGO = InstantiateAsGameObject(sceneLoadManagerGO, "SceneLoadManager");
+            var currentInitializerGO = InstantiateAsGameObject(initializerGO, "Initializer");
             
-            Selection.activeGameObject = currentSceneLoadManagerGO;
+            Selection.activeGameObject = currentInitializerGO;
         }
 
         public static void CreateSplashUI()

@@ -29,7 +29,7 @@ namespace _Game.Managers
         {
             OnLevelComplete?.Invoke();
             
-            var nextSceneIndex = SceneLoadManager.Instance.GetNextSceneIndex();
+            var nextSceneIndex = LevelManager.Instance.GetNextSceneIndex();
             if (UIManager.Instance.IsNotNull(nameof(UIManager)))
             {
                 UIManager.Instance.LevelComplete(_levelLoadDelay, () => SceneUtils.LoadSpecificScene(nextSceneIndex));   

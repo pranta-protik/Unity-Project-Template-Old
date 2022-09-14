@@ -1,14 +1,13 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace _Game.Managers
+namespace _Game.Persistent
 {
-    [CustomEditor(typeof(SceneLoadManager))]
-    public class SceneLoadManagerEditor : Editor
+    [CustomEditor(typeof(Initializer))]
+    public class InitializerEditor : Editor
     {
         #region Variables
 
-        private SerializedProperty _dontDestroyOnLoadProperty;
         private SerializedProperty _totalSceneCountProperty;
         private SerializedProperty _firstLevelSceneIndexProperty;
 
@@ -18,7 +17,6 @@ namespace _Game.Managers
 
         private void OnEnable()
         {
-            _dontDestroyOnLoadProperty = serializedObject.FindProperty("_dontDestroyOnLoad");
             _totalSceneCountProperty = serializedObject.FindProperty("_totalSceneCount");
             _firstLevelSceneIndexProperty = serializedObject.FindProperty("_firstLevelSceneIndex");
         }
@@ -29,11 +27,11 @@ namespace _Game.Managers
 
             _totalSceneCountProperty.intValue = EditorBuildSettingsScene.GetActiveSceneList(EditorBuildSettings.scenes).Length;
 
+            EditorGUI.BeginDisabledGroup(true);
             EditorGUILayout.PropertyField(_totalSceneCountProperty);
-            EditorGUILayout.PropertyField(_firstLevelSceneIndexProperty);
+            EditorGUI.EndDisabledGroup();
             
-            EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
-            EditorGUILayout.PropertyField(_dontDestroyOnLoadProperty);
+            EditorGUILayout.PropertyField(_firstLevelSceneIndexProperty);
 
             serializedObject.ApplyModifiedProperties();
         }
