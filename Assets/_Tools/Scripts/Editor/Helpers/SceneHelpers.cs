@@ -67,6 +67,28 @@ namespace _Tools.Helpers
             Selection.activeGameObject = logManagerGO;
         }
 
+        public static void CreateManagerGroup()
+        {
+            var managerGroupGO = GameObject.Find("Manager_GRP");
+
+            if (!managerGroupGO)
+            {
+                managerGroupGO = new GameObject("Manager_GRP");
+            }
+            
+            var gameManagerGO = AssetDatabase.LoadAssetAtPath("Assets/_Game/Prefabs/Managers/GameManager.prefab", typeof(GameObject)) as GameObject;
+            var currentGameManagerGO = InstantiateAsPrefab(gameManagerGO, "GameManager");
+            currentGameManagerGO.transform.SetParent(managerGroupGO.transform);
+            
+            var uiManagerGO = AssetDatabase.LoadAssetAtPath("Assets/_Game/Prefabs/Managers/UIManager.prefab", typeof(GameObject)) as GameObject;
+            var currentUIManagerGO = InstantiateAsPrefab(uiManagerGO, "UIManager");
+            currentUIManagerGO.transform.SetParent(managerGroupGO.transform);
+            
+            var levelManagerGO = AssetDatabase.LoadAssetAtPath("Assets/_Game/Prefabs/Managers/LevelManager.prefab", typeof(GameObject)) as GameObject;
+            var currentLevelManagerGO = InstantiateAsPrefab(levelManagerGO, "LevelManager");
+            currentLevelManagerGO.transform.SetParent(managerGroupGO.transform);
+        }
+
         public static void CreatePersistentScene()
         {
             var initializerGO = AssetDatabase.LoadAssetAtPath("Assets/_Game/Prefabs/Persistent/Initializer.prefab", typeof(GameObject)) as GameObject;

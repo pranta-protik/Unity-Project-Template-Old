@@ -13,6 +13,9 @@ namespace _Tools.Utils
         [MenuItem("Tools/Scene Tools/Manager Presets/Create Log Manager")]
         public static void CreateLogManager() => SceneHelpers.CreateLogManager();
 
+        [MenuItem("Tools/Scene Tools/Manager Presets/Create Manager Group")]
+        public static void CreateManagerGroup() => SceneHelpers.CreateManagerGroup();
+
         [MenuItem("Tools/Scene Tools/Scene Presets/Create Persistent Scene")]
         public static void CreatePersistentScene() => SceneHelpers.CreatePersistentScene();
         
