@@ -19,6 +19,7 @@ namespace _Game.Controllers
         private float _currentSpeed;
         private float _distanceTravelled;
         private bool _canFollow;
+        private bool _hasReachedEnd;
 
         #endregion
 
@@ -49,6 +50,8 @@ namespace _Game.Controllers
 
         private void FollowPath()
         {
+            if (_hasReachedEnd) return;
+            
             if (_currentSpeed < _speed)
             {
                 _currentSpeed += _speedMultiplier * Time.deltaTime;
@@ -58,6 +61,11 @@ namespace _Game.Controllers
             _distanceTravelled += _currentSpeed * Time.deltaTime;
             transform.position = _path.path.GetPointAtDistance(_distanceTravelled, _endOfPathInstruction);
             transform.rotation = _path.path.GetRotationAtDistance(_distanceTravelled, _endOfPathInstruction);
+
+            if (!(_distanceTravelled >= _path.path.length)) return;
+            
+            _hasReachedEnd = true;
+            GameManager.Instance.LevelComplete();
         }
 
         private void OnPathChanged() => _distanceTravelled = _path.path.GetClosestDistanceAlongPath(transform.position);

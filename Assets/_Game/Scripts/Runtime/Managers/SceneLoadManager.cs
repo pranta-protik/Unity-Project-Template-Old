@@ -38,5 +38,30 @@ namespace _Game.Managers
         }
         
         #endregion
+
+        #region Custom Methods
+
+        public int GetNextSceneIndex()
+        {
+            var sceneIndex = PlayerPrefs.GetInt(ConstUtils.LAST_PLAYED_SCENE_INDEX, (int)SceneIndex.GAME);
+            
+            var inGameLevelCount = PlayerPrefs.GetInt(ConstUtils.IN_GAME_LEVEL_COUNT, 1);
+
+            if (sceneIndex >= _totalSceneCount - 1)
+            {
+                sceneIndex = _firstLevelSceneIndex;
+            }
+            else
+            {
+                sceneIndex += 1;
+            }
+            
+            PlayerPrefs.SetInt(ConstUtils.LAST_PLAYED_SCENE_INDEX, sceneIndex);
+            PlayerPrefs.SetInt(ConstUtils.IN_GAME_LEVEL_COUNT, inGameLevelCount + 1);
+
+            return sceneIndex;
+        }
+
+        #endregion
     }
 }

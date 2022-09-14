@@ -45,6 +45,7 @@ namespace _Game.Controllers
 
         private void OnDestroy()
         {
+            _modelToRotate.DOKill();
             if (GameManager.Instance) GameManager.Instance.OnLevelStart -= GameManager_OnLevelStart;
         }
 

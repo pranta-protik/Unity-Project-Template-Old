@@ -8,17 +8,8 @@ namespace _Tools.Helpers
     {
         #region Variables
 
-        [SerializeField] private SpriteAtlas _spriteAtlas;
         [SerializeField] private string _spriteName;
-        [SerializeField] private Image _image;
-        [SerializeField] private SpriteRenderer _spriteRenderer;
-        
-        #endregion
-
-        #region Properties
-
-        public Image Image => _image;
-        public SpriteRenderer SpriteRenderer => _spriteRenderer;
+        [SerializeField] private SpriteAtlas _spriteAtlas;
 
         #endregion
         
@@ -33,9 +24,7 @@ namespace _Tools.Helpers
         public void TryAssignSprite()
         {
             if(!_spriteAtlas) return;
-            
-            if (_image) _image.sprite = _spriteAtlas.GetSprite(_spriteName);
-            if (_spriteRenderer) _spriteRenderer.sprite = _spriteAtlas.GetSprite(_spriteName);
+            if (TryGetComponent(out Image _image)) _image.sprite = _spriteAtlas.GetSprite(_spriteName);
         }
 
         #endregion
