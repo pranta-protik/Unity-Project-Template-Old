@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 3852451403974360508}
   - component: {fileID: 3852451403974360511}
   - component: {fileID: 3852451403974360510}
-  - component: {fileID: 3852451403974360509}
+  - component: {fileID: 1189998121191819304}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -115,7 +115,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3852451403974360509
+--- !u!114 &1189998121191819304
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,17 +124,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 3852451403974360499}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e1d52d69113f9748b9e5b3cb4830a78, type: 3}
+  m_Script: {fileID: 11500000, guid: fce231d8c898b584db8d563ae11d1bff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _color: {r: 0.8982352, g: 0.25, b: 1, a: 1}
-  _texture: {fileID: 0}
-  _metallic: 0
-  _smoothness: 0.5
-  _normal: {fileID: 0}
-  _isTextureEnabled: 0
-  _isNormalEnabled: 0
-  _materialIndex: 0
+  _materialOverrides:
+  - isActive: 1
+    material: {fileID: 2100000, guid: aef023429695f7e449d2aab02a8c6cc6, type: 2}
+    propertyOverrides:
+    - propertyName: _Color
+      type: 0
+      colorValue: {r: 0.40204334, g: 0, b: 1, a: 1}
+      floatValue: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+    propertyOverrideAsset: {fileID: 11400000, guid: 84827b7f8a402734b8e5df9edf2588ca, type: 2}
   _renderer: {fileID: 3852451403974360510}
 --- !u!1 &3852451405225426295
 GameObject:

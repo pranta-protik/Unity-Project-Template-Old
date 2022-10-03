@@ -115,7 +115,6 @@ GameObject:
   - component: {fileID: 5646380534121301930}
   - component: {fileID: 5646380534121301927}
   - component: {fileID: 5646380534121301924}
-  - component: {fileID: 5646380534121301925}
   m_Layer: 5
   m_Name: BG
   m_TagString: Untagged
@@ -171,8 +170,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: af0ec11908441f84c86dfe9e0cc8eb22, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -181,22 +180,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 1
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5646380534121301925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5646380534121301931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b70616719246cc542863af194899a154, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spriteAtlas: {fileID: 4343727234628468602, guid: a74268a1203dd334cb555202d2caf15d, type: 2}
-  _spriteName: Square
-  _image: {fileID: 5646380534121301924}
-  _spriteRenderer: {fileID: 0}
 --- !u!1 &5646380534182621239
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,7 +294,6 @@ GameObject:
   - component: {fileID: 5646380534411368721}
   - component: {fileID: 5646380534411368726}
   - component: {fileID: 5646380534411368727}
-  - component: {fileID: 5646380534411368724}
   m_Layer: 5
   m_Name: InnerMask
   m_TagString: Untagged
@@ -368,12 +350,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: af0ec11908441f84c86dfe9e0cc8eb22, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -391,22 +373,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 0
---- !u!114 &5646380534411368724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5646380534411368730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b70616719246cc542863af194899a154, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spriteAtlas: {fileID: 4343727234628468602, guid: a74268a1203dd334cb555202d2caf15d, type: 2}
-  _spriteName: Square
-  _image: {fileID: 5646380534411368726}
-  _spriteRenderer: {fileID: 0}
 --- !u!1 &5646380534912197575
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,7 +384,6 @@ GameObject:
   - component: {fileID: 5646380534912197574}
   - component: {fileID: 5646380534912197571}
   - component: {fileID: 5646380534912197568}
-  - component: {fileID: 5646380534912197569}
   m_Layer: 5
   m_Name: BG
   m_TagString: Untagged
@@ -474,7 +439,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 2f74ab0a5ed2cbb40b1da9adb5bde016, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -484,22 +449,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5646380534912197569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5646380534912197575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b70616719246cc542863af194899a154, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spriteAtlas: {fileID: 4343727234628468602, guid: a74268a1203dd334cb555202d2caf15d, type: 2}
-  _spriteName: ProgressBarInnerPart
-  _image: {fileID: 5646380534912197568}
-  _spriteRenderer: {fileID: 0}
 --- !u!1 &5646380535092234603
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,7 +460,6 @@ GameObject:
   - component: {fileID: 5646380535092234602}
   - component: {fileID: 5646380535092234599}
   - component: {fileID: 5646380535092234596}
-  - component: {fileID: 5646380535092234597}
   m_Layer: 5
   m_Name: Fill
   m_TagString: Untagged
@@ -567,7 +515,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 2f74ab0a5ed2cbb40b1da9adb5bde016, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -577,22 +525,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5646380535092234597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5646380535092234603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b70616719246cc542863af194899a154, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spriteAtlas: {fileID: 4343727234628468602, guid: a74268a1203dd334cb555202d2caf15d, type: 2}
-  _spriteName: ProgressBarInnerPart
-  _image: {fileID: 5646380535092234596}
-  _spriteRenderer: {fileID: 0}
 --- !u!1 &5646380535109645901
 GameObject:
   m_ObjectHideFlags: 0
@@ -604,7 +536,6 @@ GameObject:
   - component: {fileID: 5646380535109645900}
   - component: {fileID: 5646380535109645897}
   - component: {fileID: 5646380535109645902}
-  - component: {fileID: 5646380535109645903}
   m_Layer: 5
   m_Name: Glow
   m_TagString: Untagged
@@ -660,7 +591,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 4f0fcdc3dbfe23948bee6140fa6eb0e3, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -670,22 +601,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 1
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5646380535109645903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5646380535109645901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b70616719246cc542863af194899a154, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spriteAtlas: {fileID: 4343727234628468602, guid: a74268a1203dd334cb555202d2caf15d, type: 2}
-  _spriteName: Glow
-  _image: {fileID: 5646380535109645902}
-  _spriteRenderer: {fileID: 0}
 --- !u!1 &5646380535172786399
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,7 +612,6 @@ GameObject:
   - component: {fileID: 5646380535172786398}
   - component: {fileID: 5646380535172786395}
   - component: {fileID: 5646380535172786392}
-  - component: {fileID: 5646380535172786393}
   m_Layer: 5
   m_Name: GameImage
   m_TagString: Untagged
@@ -753,7 +667,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 1e86a0750f00af54f9490f20c9d89455, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -763,22 +677,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 1
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5646380535172786393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5646380535172786399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b70616719246cc542863af194899a154, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spriteAtlas: {fileID: 4343727234628468602, guid: a74268a1203dd334cb555202d2caf15d, type: 2}
-  _spriteName: Minions
-  _image: {fileID: 5646380535172786392}
-  _spriteRenderer: {fileID: 0}
 --- !u!1 &5646380535257338701
 GameObject:
   m_ObjectHideFlags: 0
@@ -1102,7 +1000,6 @@ GameObject:
   - component: {fileID: 5646380535865454602}
   - component: {fileID: 5646380535865454599}
   - component: {fileID: 5646380535865454596}
-  - component: {fileID: 5646380535865454597}
   - component: {fileID: 4803096932727015076}
   m_Layer: 5
   m_Name: Rays
@@ -1159,7 +1056,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 47bde8f7b29f4f74e9dd85e3c89f2ff0, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1169,22 +1066,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 1
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5646380535865454597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5646380535865454603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b70616719246cc542863af194899a154, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spriteAtlas: {fileID: 4343727234628468602, guid: a74268a1203dd334cb555202d2caf15d, type: 2}
-  _spriteName: Rays
-  _image: {fileID: 5646380535865454596}
-  _spriteRenderer: {fileID: 0}
 --- !u!114 &4803096932727015076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1210,7 +1091,6 @@ GameObject:
   - component: {fileID: 5646380535944865887}
   - component: {fileID: 5646380535944865880}
   - component: {fileID: 5646380535944865881}
-  - component: {fileID: 5646380535944865886}
   m_Layer: 5
   m_Name: Border
   m_TagString: Untagged
@@ -1266,7 +1146,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: f87539df5a16e554fb4e766d8ca8f78a, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1276,19 +1156,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5646380535944865886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5646380535944865884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b70616719246cc542863af194899a154, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spriteAtlas: {fileID: 4343727234628468602, guid: a74268a1203dd334cb555202d2caf15d, type: 2}
-  _spriteName: ProgressBarOutline
-  _image: {fileID: 5646380535944865881}
-  _spriteRenderer: {fileID: 0}

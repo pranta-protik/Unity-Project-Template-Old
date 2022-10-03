@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7828868966513807873}
   - component: {fileID: 7843318365557195843}
   - component: {fileID: 3379810830983871820}
-  - component: {fileID: 2140484065116450419}
   m_Layer: 5
   m_Name: WinCoin
   m_TagString: Untagged
@@ -67,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: f4c1ea82f9aa74545991fb2215cc5bd8, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -77,20 +76,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 1
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2140484065116450419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 489918950000201249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b70616719246cc542863af194899a154, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spriteName: Coin
-  _spriteAtlas: {fileID: 4343727234628468602, guid: cbde0100c907ab344804136a28b164b9, type: 2}
 --- !u!1 &1358213907497955804
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,7 +430,6 @@ GameObject:
   - component: {fileID: 4830044281612377326}
   - component: {fileID: 6188852106822120847}
   - component: {fileID: 9216841776468078908}
-  - component: {fileID: 8072842941403630245}
   - component: {fileID: 4091013211589260605}
   m_Layer: 5
   m_Name: WinShine
@@ -502,7 +486,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: b3fcfd1cfdb595f418c6129386dfbc51, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -512,20 +496,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 1
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8072842941403630245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3454695303819304188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b70616719246cc542863af194899a154, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spriteName: WinShine
-  _spriteAtlas: {fileID: 4343727234628468602, guid: cbde0100c907ab344804136a28b164b9, type: 2}
 --- !u!114 &4091013211589260605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -763,7 +733,6 @@ GameObject:
   - component: {fileID: 7323638289780173418}
   - component: {fileID: 5544750796874406219}
   - component: {fileID: 2036679818893954265}
-  - component: {fileID: 4954023880735008747}
   m_Layer: 5
   m_Name: NextButton
   m_TagString: Untagged
@@ -820,7 +789,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: e3cec4f5ec4e9cd46a1c2322a1ecfc81, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -886,20 +855,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4954023880735008747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4248444169548258595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b70616719246cc542863af194899a154, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spriteName: NextButton
-  _spriteAtlas: {fileID: 4343727234628468602, guid: cbde0100c907ab344804136a28b164b9, type: 2}
 --- !u!1 &4481639890899276517
 GameObject:
   m_ObjectHideFlags: 0
@@ -962,7 +917,6 @@ GameObject:
   - component: {fileID: 8827057708214705724}
   - component: {fileID: 8961142159194681194}
   - component: {fileID: 3961018633238058664}
-  - component: {fileID: 3186096050408020363}
   m_Layer: 5
   m_Name: WinBanner
   m_TagString: Untagged
@@ -1019,7 +973,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: e878c5fd65f23474296ba6536d9e434a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1029,20 +983,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 1
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3186096050408020363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5318317204318247009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b70616719246cc542863af194899a154, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spriteName: WinBanner
-  _spriteAtlas: {fileID: 4343727234628468602, guid: cbde0100c907ab344804136a28b164b9, type: 2}
 --- !u!1 &6094896041649565482
 GameObject:
   m_ObjectHideFlags: 0
@@ -1624,7 +1564,6 @@ GameObject:
   - component: {fileID: 6919219656658089635}
   - component: {fileID: 6919219656658089646}
   - component: {fileID: 6919219656658089645}
-  - component: {fileID: 6919219656658089644}
   m_Layer: 5
   m_Name: Arrow
   m_TagString: Untagged
@@ -1680,7 +1619,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 7e8c70972abae3444b3bf0c1ad1f32dc, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1690,20 +1629,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 1
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6919219656658089644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6919219656658089634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b70616719246cc542863af194899a154, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spriteName: DoubleSidedArrow
-  _spriteAtlas: {fileID: 4343727234628468602, guid: 727850d187b586748bd4c0bdab953b53, type: 2}
 --- !u!1 &6919219656755722241
 GameObject:
   m_ObjectHideFlags: 0
@@ -1749,7 +1674,6 @@ GameObject:
   - component: {fileID: 6919219657216502230}
   - component: {fileID: 6919219657216502225}
   - component: {fileID: 6919219657216502224}
-  - component: {fileID: 6919219657216502231}
   - component: {fileID: 6919219657216502226}
   m_Layer: 5
   m_Name: HintHand
@@ -1806,7 +1730,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8dda7a13cea56ad438c08423cb6d9129, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1816,20 +1740,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 1
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6919219657216502231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6919219657216502229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b70616719246cc542863af194899a154, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spriteName: HintHand
-  _spriteAtlas: {fileID: 4343727234628468602, guid: 727850d187b586748bd4c0bdab953b53, type: 2}
 --- !u!114 &6919219657216502226
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -158,6 +158,21 @@ namespace _Tools.Helpers
 
                 if (materialOverride.isActive)
                 {
+                    EditorGUILayout.Space();
+                
+                    EditorGUI.BeginChangeCheck();
+                    var property = serializedObject.FindProperty("_materialOverrides.Array.data[" + i + "].propertyOverrideAsset");
+                    EditorGUILayout.PropertyField(property, new GUIContent("Property override: asset"));
+                    if (EditorGUI.EndChangeCheck())
+                    {
+                        serializedObject.ApplyModifiedProperties();
+                    }
+
+                    if (materialOverride.propertyOverrideAsset && materialOverride.propertyOverrideAsset.Shader != materialOverride.material.shader)
+                    {
+                        EditorGUILayout.HelpBox("Shader mismatch. The selected override asset does not match this material's shader.", MessageType.Error);
+                    }
+                    
                     if (Selection.gameObjects.Length > 1)
                     {
                         EditorGUILayout.HelpBox("Multi editing not supported", MessageType.Info);
@@ -176,7 +191,7 @@ namespace _Tools.Helpers
             materialPropertyOverride.ApplyMaterialProperties();
         }
 
-        private static bool DrawOverrideGUI(
+        public static bool DrawOverrideGUI(
             Shader shader,
             List<MaterialPropertyOverride.ShaderPropertyValue> propertyOverrides,
             bool canShowAll,

@@ -37,6 +37,7 @@ namespace _Tools.Helpers
             public Material material;
             public List<ShaderPropertyValue> propertyOverrides = new();
             [NonSerialized] public Dictionary<string, ShaderPropertyValue> propertyValueDict = new();
+            public MaterialPropertyOverrideAsset propertyOverrideAsset;
         }
 
         #region Variables
@@ -135,6 +136,8 @@ namespace _Tools.Helpers
                 }
                 else
                 {
+                    if (materialOverride.propertyOverrideAsset) ApplyOverrides(Mpb, materialOverride.propertyOverrideAsset.PropertyOverrides);
+                    
                     ApplyOverrides(Mpb, materialOverride.propertyOverrides);
                     _renderer.SetPropertyBlock(Mpb);
                 }
@@ -152,6 +155,9 @@ namespace _Tools.Helpers
                     else
                     {
                         Mpb.Clear();
+                        
+                        if (materialOverride.propertyOverrideAsset) ApplyOverrides(Mpb, materialOverride.propertyOverrideAsset.PropertyOverrides);
+                        
                         ApplyOverrides(Mpb, materialOverride.propertyOverrides);
                         _renderer.SetPropertyBlock(Mpb, i);
                     }
