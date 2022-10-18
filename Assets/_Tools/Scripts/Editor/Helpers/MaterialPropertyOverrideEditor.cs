@@ -161,16 +161,16 @@ namespace _Tools.Helpers
                     EditorGUILayout.Space();
                 
                     EditorGUI.BeginChangeCheck();
-                    var property = serializedObject.FindProperty("_materialOverrides.Array.data[" + i + "].propertyOverrideAsset");
-                    EditorGUILayout.PropertyField(property, new GUIContent("Property override: asset"));
+                    var property = serializedObject.FindProperty("_materialOverrides.Array.data[" + i + "].propertyOverridePreset");
+                    EditorGUILayout.PropertyField(property, new GUIContent("Property override: preset"));
                     if (EditorGUI.EndChangeCheck())
                     {
                         serializedObject.ApplyModifiedProperties();
                     }
 
-                    if (materialOverride.propertyOverrideAsset && materialOverride.propertyOverrideAsset.Shader != materialOverride.material.shader)
+                    if (materialOverride.propertyOverridePreset && materialOverride.propertyOverridePreset.Shader != materialOverride.material.shader)
                     {
-                        EditorGUILayout.HelpBox("Shader mismatch. The selected override asset does not match this material's shader.", MessageType.Error);
+                        EditorGUILayout.HelpBox("Shader mismatch. The selected override preset does not match this material's shader.", MessageType.Error);
                     }
                     
                     if (Selection.gameObjects.Length > 1)

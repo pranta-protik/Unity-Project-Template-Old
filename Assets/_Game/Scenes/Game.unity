@@ -406,11 +406,11 @@ MonoBehaviour:
     propertyOverrides:
     - propertyName: _Color
       type: 0
-      colorValue: {r: 0.40204334, g: 0, b: 1, a: 1}
+      colorValue: {r: 0, g: 0.4576769, b: 1, a: 1}
       floatValue: 0
       vectorValue: {x: 0, y: 0, z: 0, w: 0}
       textureValue: {fileID: 0}
-    propertyOverrideAsset: {fileID: 11400000, guid: 84827b7f8a402734b8e5df9edf2588ca, type: 2}
+    propertyOverridePreset: {fileID: 0}
   _renderer: {fileID: 1196140037679909799}
 --- !u!1001 &4284628478908772698
 PrefabInstance:
@@ -449,11 +449,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 972091053505309403, guid: e6c167545a2d9a546a834e96f3651254, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 972091053505309403, guid: e6c167545a2d9a546a834e96f3651254, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 972091053505309403, guid: e6c167545a2d9a546a834e96f3651254, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -759,10 +759,6 @@ PrefabInstance:
     - target: {fileID: 2543848385645619838, guid: e9e603572ff679e4789a4300bf526902, type: 3}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2543848385645619838, guid: e9e603572ff679e4789a4300bf526902, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.99999994
       objectReference: {fileID: 0}
     - target: {fileID: 2543848385645619838, guid: e9e603572ff679e4789a4300bf526902, type: 3}
       propertyPath: m_LocalPosition.x

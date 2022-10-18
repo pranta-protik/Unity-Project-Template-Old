@@ -237,5 +237,5 @@ MonoBehaviour:
       floatValue: 0
       vectorValue: {x: 0, y: 0, z: 0, w: 0}
       textureValue: {fileID: 0}
-    propertyOverrideAsset: {fileID: 11400000, guid: 84827b7f8a402734b8e5df9edf2588ca, type: 2}
+    propertyOverridePreset: {fileID: 11400000, guid: 84827b7f8a402734b8e5df9edf2588ca, type: 2}
   _renderer: {fileID: 6812532148267018622}

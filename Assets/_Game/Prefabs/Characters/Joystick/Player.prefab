@@ -133,11 +133,11 @@ MonoBehaviour:
     propertyOverrides:
     - propertyName: _Color
       type: 0
-      colorValue: {r: 0.40204334, g: 0, b: 1, a: 1}
+      colorValue: {r: 0, g: 0.45882353, b: 1, a: 1}
       floatValue: 0
       vectorValue: {x: 0, y: 0, z: 0, w: 0}
       textureValue: {fileID: 0}
-    propertyOverrideAsset: {fileID: 11400000, guid: 84827b7f8a402734b8e5df9edf2588ca, type: 2}
+    propertyOverridePreset: {fileID: 11400000, guid: 84827b7f8a402734b8e5df9edf2588ca, type: 2}
   _renderer: {fileID: 3852451403974360510}
 --- !u!1 &3852451405225426295
 GameObject:

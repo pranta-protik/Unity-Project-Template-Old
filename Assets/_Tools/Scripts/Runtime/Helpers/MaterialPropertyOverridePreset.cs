@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace _Tools.Helpers
 {
-    [CreateAssetMenu(fileName = "MaterialPropertyOverrideAsset", menuName = "Scriptable Objects/Assets/MaterialPropertyOverrideAsset")]
-    public class MaterialPropertyOverrideAsset : ScriptableObject
+    [CreateAssetMenu(fileName = "MaterialPropertyOverridePreset", menuName = "Scriptable Objects/Presets/MaterialPropertyOverridePreset")]
+    public class MaterialPropertyOverridePreset : ScriptableObject
     {
         [SerializeField] private Shader _shader;
         [SerializeField] private List<MaterialPropertyOverride.ShaderPropertyValue> _propertyOverrides = new();

@@ -4,15 +4,15 @@ using UnityEditor;
 
 namespace _Tools.Helpers
 {
-    [CustomEditor(typeof(MaterialPropertyOverrideAsset))]
-    public class MaterialPropertyOverrideAssetEditor : Editor
+    [CustomEditor(typeof(MaterialPropertyOverridePreset))]
+    public class MaterialPropertyOverridePresetEditor : Editor
     {
         private bool _canShowAll;
 
         public override void OnInspectorGUI()
         {
-            var materialPropertyOverrideAsset = target as MaterialPropertyOverrideAsset;
-            if (!materialPropertyOverrideAsset) return;
+            var materialPropertyOverridePreset = target as MaterialPropertyOverridePreset;
+            if (!materialPropertyOverridePreset) return;
 
             EditorGUILayout.Space();
 
@@ -27,7 +27,7 @@ namespace _Tools.Helpers
 
             serializedObject.ApplyModifiedProperties();
 
-            if (!materialPropertyOverrideAsset.Shader)
+            if (!materialPropertyOverridePreset.Shader)
             {
                 EditorGUILayout.HelpBox("No shader selected!", MessageType.Error);
                 return;
@@ -47,10 +47,10 @@ namespace _Tools.Helpers
             EditorGUILayout.Space();
 
             var hasChanged = MaterialPropertyOverrideEditor.DrawOverrideGUI(
-                materialPropertyOverrideAsset.Shader,
-                materialPropertyOverrideAsset.PropertyOverrides,
+                materialPropertyOverridePreset.Shader,
+                materialPropertyOverridePreset.PropertyOverrides,
                 _canShowAll,
-                materialPropertyOverrideAsset);
+                materialPropertyOverridePreset);
 
             GUILayout.Space(20);
             GUILayout.BeginHorizontal();
@@ -66,7 +66,7 @@ namespace _Tools.Helpers
                 {
                     foreach (var materialOverride in materialPropertyOverride.MaterialOverrides)
                     {
-                        if (materialOverride.propertyOverrideAsset != materialPropertyOverrideAsset) continue;
+                        if (materialOverride.propertyOverridePreset != materialPropertyOverridePreset) continue;
 
                         gameObjects.Add(materialPropertyOverride.gameObject);
                         break;
@@ -85,7 +85,7 @@ namespace _Tools.Helpers
                 {
                     foreach (var materialOverride in materialPropertyOverride.MaterialOverrides)
                     {
-                        if (materialOverride.propertyOverrideAsset != materialPropertyOverrideAsset) continue;
+                        if (materialOverride.propertyOverridePreset != materialPropertyOverridePreset) continue;
 
                         materialPropertyOverride.ClearMaterialProperties();
                         materialPropertyOverride.ApplyMaterialProperties();
@@ -96,7 +96,7 @@ namespace _Tools.Helpers
                 SceneView.RepaintAll();
             }
 
-            if (hasChanged) EditorUtility.SetDirty(materialPropertyOverrideAsset);
+            if (hasChanged) EditorUtility.SetDirty(materialPropertyOverridePreset);
         }
     }
 }
