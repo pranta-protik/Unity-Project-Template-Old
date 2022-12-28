@@ -6,6 +6,7 @@ using _Tools.Utils;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using Object = UnityEngine.Object;
 
@@ -32,7 +33,6 @@ namespace _Tools.Helpers
             {
                 CreateScene(rootPath + "/Scenes", "Persistent", true);
                 CreateScene(rootPath + "/Scenes", "Splash", true);
-                CreateScene(rootPath + "/Scenes", "UI", true);
                 CreateScene(rootPath + "/Scenes", "Game");
             }
             
@@ -119,16 +119,13 @@ namespace _Tools.Helpers
         {
             var levelUIGroupGO = AssetDatabase.LoadAssetAtPath("Assets/_Game/Prefabs/UI/LevelUI_GRP.prefab", typeof(GameObject)) as GameObject;
 
-            if (!levelUIGroupGO)
-            {
-                EditorUtils.DisplayDialogBox("Error", "Unable to find the LevelUI_GRP prefab!");
-                return;
-            }
+            var currentLevelUIGroupGO = InstantiateAsPrefab(levelUIGroupGO, "LevelUI_GRP");
 
-            var currentLevelUIGroupGO = Object.Instantiate(levelUIGroupGO);
-            currentLevelUIGroupGO.transform.DetachChildren();
-            Object.DestroyImmediate(currentLevelUIGroupGO);
-
+            var uiCamera = currentLevelUIGroupGO.GetComponentInChildren<Camera>();
+            
+            var cameraData = Camera.main.GetUniversalAdditionalCameraData();
+            cameraData.cameraStack.Add(uiCamera);
+            
             EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
         }
 

@@ -22,7 +22,7 @@ namespace _Tools.Utils
         [MenuItem("Tools/Scene Tools/Scene Presets/UI Scenes/Create Splash Scene")]
         public static void CreateSplashUI() => SceneHelpers.CreateSplashUI();
         
-        [MenuItem("Tools/Scene Tools/Scene Presets/UI Scenes/Create Level UI Scene")]
+        [MenuItem("Tools/Scene Tools/UI Presets/Create Level UI")]
         public static void CreateLevelUI() => SceneHelpers.CreateLevelUI();
         
         [MenuItem("Tools/Scene Tools/Scene Presets/Game Scenes/Create Joystick Controller Scene")]

@@ -7,13 +7,10 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/_Game/Scenes/Persistent.unity
-    guid: 00000000000000000000000000000000
+    guid: 0fda9132f7d60f04680231e47e55f677
   - enabled: 1
     path: Assets/_Game/Scenes/Splash.unity
     guid: 364add010fd70304eb5f16f3fe5b9432
-  - enabled: 1
-    path: Assets/_Game/Scenes/UI.unity
-    guid: be70f8fbec235a748b26a66f4bbca0f2
   - enabled: 1
     path: Assets/_Game/Scenes/Game.unity
     guid: 6feb83aea1b46b249bbc25185608d7b5

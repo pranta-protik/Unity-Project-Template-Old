@@ -4,7 +4,6 @@ namespace _Game.Helpers
     {
         LOADING = 0,
         SPLASH = 1,
-        UI = 2,
-        GAME = 3
+        GAME = 2
     }
 }

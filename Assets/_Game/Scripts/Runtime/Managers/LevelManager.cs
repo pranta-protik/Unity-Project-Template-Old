@@ -19,7 +19,7 @@ namespace _Game.Managers
         {
             base.OnAwake();
 
-            _totalSceneCount = PlayerPrefs.GetInt(ConstUtils.TOTAL_SCENE_COUNT, 4);
+            _totalSceneCount = PlayerPrefs.GetInt(ConstUtils.TOTAL_SCENE_COUNT, 3);
             _firstLevelSceneIndex = PlayerPrefs.GetInt(ConstUtils.FIRST_LEVEL_SCENE_INDEX, (int)SceneIndex.GAME);
         }
 

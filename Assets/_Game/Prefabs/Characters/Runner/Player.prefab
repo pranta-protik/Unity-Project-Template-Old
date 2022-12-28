@@ -142,7 +142,6 @@ GameObject:
   - component: {fileID: 6812532148267018616}
   - component: {fileID: 6812532148267018621}
   - component: {fileID: 6812532148267018622}
-  - component: {fileID: 5960308969597433163}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -193,7 +192,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: aef023429695f7e449d2aab02a8c6cc6, type: 2}
+  - {fileID: 2100000, guid: 91bbe09513557f948ac6cbe7cd0f3695, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -215,27 +214,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5960308969597433163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6812532148267018617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fce231d8c898b584db8d563ae11d1bff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _materialOverrides:
-  - isActive: 1
-    material: {fileID: 2100000, guid: aef023429695f7e449d2aab02a8c6cc6, type: 2}
-    propertyOverrides:
-    - propertyName: _Color
-      type: 0
-      colorValue: {r: 1, g: 0.34097308, b: 0, a: 1}
-      floatValue: 0
-      vectorValue: {x: 0, y: 0, z: 0, w: 0}
-      textureValue: {fileID: 0}
-    propertyOverridePreset: {fileID: 11400000, guid: 84827b7f8a402734b8e5df9edf2588ca, type: 2}
-  _renderer: {fileID: 6812532148267018622}

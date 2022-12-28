@@ -1,9 +1,7 @@
 using System;
 using System.Collections;
-using _Game.Helpers;
 using _Tools.Helpers;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace _Game.Managers
 {
@@ -17,12 +15,6 @@ namespace _Game.Managers
 
         #endregion
         
-        #region Unity Methods
-
-        private void Start() => SceneUtils.LoadSpecificScene((int)SceneIndex.UI, LoadSceneMode.Additive);
-
-        #endregion
-
         #region Custom Methods
 
         public void FlashHurtScreen(float duration) => OnHurt?.Invoke(duration);

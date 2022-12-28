@@ -8,7 +8,7 @@ namespace _Game.Persistent
     {
         #region Variables
         
-        [SerializeField, Min(0)]private int _totalSceneCount;
+        [SerializeField, Min(0)] private int _totalSceneCount;
         [SerializeField, Min(0)] private int _firstLevelSceneIndex = (int)SceneIndex.GAME;
 
         #endregion

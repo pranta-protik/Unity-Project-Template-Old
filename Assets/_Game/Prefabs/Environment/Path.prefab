@@ -65,7 +65,7 @@ MonoBehaviour:
       - 0
       globalNormalsAngle: 90
       flipNormals: 0
-    vertexPathUpToDate: 0
+    vertexPathUpToDate: 1
     vertexPathMaxAngleError: 0.3
     vertexPathMinVertexSpacing: 0.01
     showTransformTool: 1
@@ -145,7 +145,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1733798357137252847, guid: 02c5c61f76f85c0418e4b0e0e70ed1fb, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 92e5669ca25e1de4a9234c8089d99510, type: 2}
+    m_RemovedComponents:
+    - {fileID: 7542682378906123531, guid: 02c5c61f76f85c0418e4b0e0e70ed1fb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 02c5c61f76f85c0418e4b0e0e70ed1fb, type: 3}
 --- !u!4 &3361302503111769613 stripped
 Transform:

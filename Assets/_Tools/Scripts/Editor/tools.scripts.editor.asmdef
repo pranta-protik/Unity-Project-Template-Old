@@ -2,7 +2,8 @@
     "name": "tools.scripts.editor",
     "rootNamespace": "",
     "references": [
-        "GUID:864952e279ecafc4f8ff78d6329af4b5"
+        "GUID:864952e279ecafc4f8ff78d6329af4b5",
+        "GUID:15fc0a57446b3144c949da3e2b9737a9"
     ],
     "includePlatforms": [
         "Editor"
